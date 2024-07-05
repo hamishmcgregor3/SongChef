@@ -1,0 +1,16 @@
+﻿.song-rec {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 2px solid #000;
+    color: #000;
+    font-family: Arial, sans-serif;
+}
+
+.song-title { 
+    font-size: 45px; 
+}
+
+p { 
+    margin: 0; 
+}

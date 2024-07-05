@@ -1,0 +1,38 @@
+﻿.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.app-body {
+    display: flex;
+    /*    width: 100%;*/
+    padding-top: 5.5vh;
+    height: 100%; 
+}
+
+.title-bar {
+    /*    flex: 0 0 auto;*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 5.5vh;
+}
+
+.nav-bar {
+    position: fixed;
+    left: 0;
+    z-index: 1000;
+    width: 15%;
+    height: 100%
+    /*    flex: 0 0 auto;*/
+}
+
+.songrecs-display {
+    margin-left: 15%; 
+    width: 85%;
+    overflow-y: auto;
+    /*    flex: 1;
+    background: linear-gradient(to bottom, #ff0000, #ff7f00, #ffff00);*/
+}

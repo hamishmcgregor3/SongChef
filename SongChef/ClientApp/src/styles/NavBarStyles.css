@@ -1,0 +1,39 @@
+﻿.nav-bar {
+    background-color: white;
+    padding: 20px;
+    border-right: 2px solid #000;
+    text-align: center;
+}
+
+.nav-bar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-bar nav ul li {
+    margin: 10px 0;
+}
+
+.nav-bar nav ul li a, .nav-bar nav ul li button {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.nav-bar nav ul li button.add-song-btn {
+    background-color: limegreen;
+    color: white;
+    border-radius: 5px;
+}
+
+.nav-bar nav ul li a:hover, .nav-bar nav ul li button:hover {
+    background-color: lightgray;
+}
+
+.logout { 
+    margin-top: 70vh; 
+}
