@@ -10,5 +10,6 @@ namespace SongChef.Data
         }
         public DbSet<SongRecModel> SongRecommendations { get; set; }
         public DbSet<GenreModel> Genres { get; set; }
+        public DbSet<UserModel> Users { get; set; }
     }
 }

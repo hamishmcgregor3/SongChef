@@ -17,15 +17,26 @@ namespace SongChef.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("GetSongs")]
         public async Task<ActionResult<IEnumerable<SongRecModel>>> GetSongRecommendations()
         {
             return await _context.SongRecommendations.Include(s => s.Genre).ToListAsync();
         }
 
-        [HttpPost]
+        [HttpGet("GetGenres")]
+        public async Task<ActionResult<IEnumerable<GenreModel>>> GetGenres()
+        {
+            return await _context.Genres.ToListAsync();
+        }
+
+        [HttpPost("AddSongRec")]
         public async Task<ActionResult<SongRecModel>> PostSongRecommendation(SongRecModel songRec)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             _context.SongRecommendations.Add(songRec);
             await _context.SaveChangesAsync();
 

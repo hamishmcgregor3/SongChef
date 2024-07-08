@@ -13,7 +13,7 @@ const SongRecsDisplay = () => {
         setLoading(true);
         setError('');
         try {
-            const response = await axios.get('/api/Songs');
+            const response = await axios.get('/api/Songs/GetSongs');
             setSongs(response.data);
         } catch (err) {
             setError('Error fetching song recommendations');
