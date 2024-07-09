@@ -1,6 +1,7 @@
 ﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import '../styles/LoginStyles.css'; 
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -19,7 +20,7 @@ const Login = () => {
             const response = await axios.post(url, user);
             setMessage(response.data);
 
-            if (response.status == 200) {
+            if (response.status === 200) {
                 sessionStorage.setItem('username', username);
                 navigate('/Home');
             } else {
@@ -33,10 +34,10 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div className="login-container">
             <h2>{isRegister ? 'Register' : 'Login'}</h2>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="form-group">
                     <label>Username:</label>
                     <input
                         type="text"
@@ -45,7 +46,7 @@ const Login = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Password:</label>
                     <input
                         type="password"
@@ -54,10 +55,12 @@ const Login = () => {
                         required
                     />
                 </div>
-                <button type="submit">{isRegister ? 'Register' : 'Login'}</button>
+                <button type="submit" className="submit-button">
+                    {isRegister ? 'Register' : 'Login'}
+                </button>
             </form>
-            <p>{message}</p>
-            <button onClick={() => setIsRegister(!isRegister)}>
+            <p className="message">{message}</p>
+            <button className="toggle-button" onClick={() => setIsRegister(!isRegister)}>
                 {isRegister ? 'Switch to Login' : 'Switch to Register'}
             </button>
         </div>

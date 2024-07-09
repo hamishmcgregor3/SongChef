@@ -1,15 +1,19 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../styles/AddSongRecModalStyles.css'; 
+import '../styles/AddSongRecModalStyles.css';
 
 const AddSongRecModal = () => {
+
     const [showModal, setShowModal] = useState(false);
+    const [genres, setGenres] = useState([]);
+
     const [song, setSong] = useState({
         title: '',
         artist: '',
-        genre: '',
+        genreId: 0,
+        genre: null, 
         idealListeningExperience: '',
-        recommendedBy: ''
+        recommendedBy: sessionStorage.getItem('username') || ''
     });
 
     const handleChange = (e) => {
@@ -23,70 +27,60 @@ const AddSongRecModal = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/api/Songs', song);
-            alert('Song recommendation added successfully!');
+            const response = await axios.post('/api/Songs/AddSongRec', song);
+            console.log(response.data); 
             setShowModal(false);
         } catch (error) {
-            console.error('There was an error adding the song recommendation!', error);
+            console.error('Error adding song recommendation:', error);
         }
     };
 
+    const fetchGenres = async () => {
+        try {
+            const response = await axios.get('/api/Songs/GetGenres');
+            setGenres(response.data);
+        } catch (error) {
+            console.error('Error getting genres:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchGenres();
+    }, []);
+
     return (
         <div>
-            <button onClick={() => setShowModal(true)}>Add Song Recommendation</button>
+            <button className="add-song-rec-button" onClick={() => setShowModal(true)}>Add Song Rec</button>
             {showModal && (
                 <div className="modal">
                     <div className="modal-content">
                         <form className="form-container" onSubmit={handleSubmit}>
                             <label>
-                                Title:
+                                <span>Song Title:</span>
                                 <input type="text" name="title" value={song.title} onChange={handleChange} required />
                             </label>
                             <label>
-                                Artist:
+                                <span>Artist:</span>
                                 <input type="text" name="artist" value={song.artist} onChange={handleChange} required />
                             </label>
                             <label>
-                                Genre:
-                                <select name="genre" value={song.genre} onChange={handleChange} required>
+                                <span>Genre:</span>
+                                <select name="genreId" value={song.genreId} onChange={handleChange} required>
                                     <option value="">Select Genre</option>
-                                    <option value="Pop">Pop</option>
-                                    <option value="Rock">Rock</option>
-                                    <option value="Hip Hop">Hip Hop</option>
-                                    <option value="Jazz">Jazz</option>
-                                    <option value="Classical">Classical</option>
-                                    <option value="Country">Country</option>
-                                    <option value="Electronic">Electronic</option>
-                                    <option value="R&B">R&B</option>
-                                    <option value="Reggae">Reggae</option>
-                                    <option value="Alternative">Alternative</option>
-                                    <option value="Disco">Disco</option>
-                                    <option value="EDM">EDM</option>
-                                    <option value="Folk">Folk</option>
-                                    <option value="Funk">Funk</option>
-                                    <option value="House">House</option>
-                                    <option value="Indie">Indie</option>
-                                    <option value="Instrumental">Instrumental</option>
-                                    <option value="K-Pop">K-Pop</option>
-                                    <option value="Latin">Latin</option>
-                                    <option value="Metal">Metal</option>
-                                    <option value="Punk">Punk</option>
-                                    <option value="Rap">Rap</option>
-                                    <option value="Soul">Soul</option>
-                                    <option value="Techno">Techno</option>
+                                    {genres.map((genre, index) => (
+                                        <option key={index} value={genre.id}>
+                                            {genre.genre}
+                                        </option>
+                                    ))}
                                 </select>
                             </label>
                             <label>
-                                Ideal Listening Experience:
+                                <span>Ideal Listening Experience:</span>
                                 <input type="text" name="idealListeningExperience" value={song.idealListeningExperience} onChange={handleChange} />
                             </label>
-                            <label>
-                                Recommended By:
-                                <input type="text" name="recommendedBy" value={song.recommendedBy} onChange={handleChange} required />
-                            </label>
-                            <button type="submit">Submit</button>
+                            <button type="submit" className="submit-song-rec-button">Submit</button>
                         </form>
-                        <span className="close" onClick={() => setShowModal(false)}>&times;</span>
+                        <span className="close" onClick={() => setShowModal(false)}>Close</span>
                     </div>
                 </div>
             )}

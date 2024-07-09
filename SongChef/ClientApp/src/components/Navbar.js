@@ -1,19 +1,29 @@
 ﻿import React from 'react';
-import '../styles/NavBarStyles.css'; 
+import { useNavigate } from 'react-router-dom';
+import '../styles/NavBarStyles.css';
 import AddSongRecModal from './AddSongRecModal';
 
 const NavBar = () => {
+
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            sessionStorage.removeItem('username');
+            navigate('/');
+        } catch (error) {
+            alert(error.response.data);
+        }
+    };
+
     return (
         <div className="nav-bar">
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/my-songs">My Songs</a></li>
-                    {/*<li><button className="add-song-btn">Add Song Rec</button></li>*/}
-                    {/*<li><AddSongRecModal /></li>*/}
-                    <li><a href="/logout" className="logout">Logout</a></li>
-                </ul>
-            </nav>
+            <AddSongRecModal />
+            {/*<a href="/" className="logout">Logout</a>*/}
+            <button type="submit" className="logout-button" onClick={handleSubmit}>
+                Logout
+            </button>
         </div>
     );
 };

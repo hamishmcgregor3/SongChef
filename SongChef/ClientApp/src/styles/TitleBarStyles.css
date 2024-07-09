@@ -7,5 +7,14 @@
 
 .title-bar h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 36px;
+    font-family: "forma-djr-micro", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.chef-title {
+    font-family: "forma-djr-micro", sans-serif;
+    font-weight: 400;
+    font-style: italic;
 }

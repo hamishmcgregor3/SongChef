@@ -5,13 +5,13 @@ const SongRec = ({ title, artist, genre, experience, recommendedBy, backgroundCo
     return (
         <div className="song-rec" style={{ backgroundColor, color: textColor }}>
         <div className="song-details">
-                <p className="song-title">[<strong>{title}</strong>]</p>
+                <p className="song-title"><strong>{title}</strong></p>
                 <p><strong>Artist:</strong> {artist}</p>
                 <p><strong>Genre:</strong> {genre}</p>
-                <p><strong>Listening Experience:</strong> {experience}</p>
+                <p><strong>Ideal Listening Experience:</strong> {experience}</p>
             </div>
             <div className="recommended-by">
-                <p><strong>Recommended By:</strong> {recommendedBy}</p>
+                <p className="recommended-by-p">Recommended By: <strong>{recommendedBy}</strong></p>
             </div>
         </div>
     );

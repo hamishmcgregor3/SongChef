@@ -1,39 +1,27 @@
 ﻿.nav-bar {
-    background-color: white;
     padding: 20px;
+    padding-top: 40px;
     border-right: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     text-align: center;
+    font-family: "forma-djr-micro", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
-.nav-bar nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-.nav-bar nav ul li {
-    margin: 10px 0;
-}
-
-.nav-bar nav ul li a, .nav-bar nav ul li button {
-    text-decoration: none;
+.logout-button {
+    margin-top: 400px;
+    font-size: 20px;
     color: black;
-    display: block;
-    padding: 10px;
     border: none;
-    background: none;
-    cursor: pointer;
+    background-color: white;
+    font-family: "forma-djr-micro", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
-.nav-bar nav ul li button.add-song-btn {
-    background-color: limegreen;
-    color: white;
-    border-radius: 5px;
-}
-
-.nav-bar nav ul li a:hover, .nav-bar nav ul li button:hover {
-    background-color: lightgray;
-}
-
-.logout { 
-    margin-top: 70vh; 
+.logout-button:hover {
+    text-decoration-line: underline;
 }

@@ -20,7 +20,19 @@ namespace SongChef.Controllers
         [HttpGet("GetSongs")]
         public async Task<ActionResult<IEnumerable<SongRecModel>>> GetSongRecommendations()
         {
-            return await _context.SongRecommendations.Include(s => s.Genre).ToListAsync();
+            return await _context.SongRecommendations
+                .Include(s => s.Genre)
+                .OrderByDescending(s => s.Id)
+                .ToListAsync();
+        }
+
+        [HttpGet("GetSongsForUser")]
+        public async Task<ActionResult<IEnumerable<SongRecModel>>> GetSongRecommendationsForUser(string username)
+        {
+            return await _context.SongRecommendations
+                .Where(s => s.RecommendedBy == username).Include(s => s.Genre)
+                .OrderByDescending(s => s.Id)
+                .ToListAsync();
         }
 
         [HttpGet("GetGenres")]
@@ -30,17 +42,17 @@ namespace SongChef.Controllers
         }
 
         [HttpPost("AddSongRec")]
-        public async Task<ActionResult<SongRecModel>> PostSongRecommendation(SongRecModel songRec)
+        public async Task<ActionResult<SongRecModel>> PostSongRecommendation(SongRecModel songrec)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.SongRecommendations.Add(songRec);
+            _context.SongRecommendations.Add(songrec);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetSongRecommendations), new { id = songRec.Id }, songRec);
+            return CreatedAtAction(nameof(GetSongRecommendations), new { id = songrec.Id }, songrec);
         }
     }
 }

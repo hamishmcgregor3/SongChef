@@ -1,3 +1,16 @@
 ﻿.songrecs-display {
     overflow-y: auto;
 }
+
+.switch {
+    padding: 10px;
+    border-bottom: 2px solid #000;
+}
+
+.switch-label {
+    margin-left: 10px;
+    font-size: 18px;
+    font-family: "forma-djr-micro", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}

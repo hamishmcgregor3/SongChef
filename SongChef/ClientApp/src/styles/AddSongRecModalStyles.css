@@ -1,5 +1,28 @@
 ﻿/* AddSongRecommendation.css */
 
+.add-song-rec-button {
+    width: 100%;
+    color: black;
+    padding: 12px;
+    border: 2px solid black;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    font-family: "forma-djr-micro", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    background-color: white;
+}
+
+.add-song-rec-button:hover {
+    background-color: lime;
+}
+
 .modal {
     display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -15,8 +38,8 @@
     background-color: #fefefe;
     margin: 5% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    border: 2px solid black;
+    width: 40%; /* Could be more or less, depending on screen size */
     position: relative;
 }
 
@@ -29,11 +52,35 @@
 .form-container label {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-container label input {
+    margin-top: 10px;
+}
+
+.form-container label select {
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 4px; 
+    background-color: black;
+    color: white; 
+}
+
+.submit-song-rec-button {
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.submit-song-rec-button:hover {
+    background-color: black;
+    color: white;
 }
 
 .close {
-    color: #aaa;
     font-size: 28px;
     font-weight: bold;
 }
