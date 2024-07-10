@@ -57,15 +57,19 @@ input[type="password"] {
     margin-top: 15px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .toggle-button {
-    background: none;
-    border: none;
-    color: black;
-    cursor: pointer;
+    background-color: black;
+    color: white;
     font-size: 14px;
-    margin-top: 10px;
+    border-radius: 4px;
 }
 
 .toggle-button:hover {
-    text-decoration: underline;
+    background-color: white;
+    color: black;
 }

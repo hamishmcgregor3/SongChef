@@ -30,6 +30,7 @@ const AddSongRecModal = () => {
             const response = await axios.post('/api/Songs/AddSongRec', song);
             console.log(response.data); 
             setShowModal(false);
+            window.location.reload();
         } catch (error) {
             console.error('Error adding song recommendation:', error);
         }

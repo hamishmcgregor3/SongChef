@@ -60,9 +60,11 @@ const Login = () => {
                 </button>
             </form>
             <p className="message">{message}</p>
-            <button className="toggle-button" onClick={() => setIsRegister(!isRegister)}>
-                {isRegister ? 'Switch to Login' : 'Switch to Register'}
-            </button>
+            <div className="button-container">
+                <button className="toggle-button" onClick={() => setIsRegister(!isRegister)}>
+                    {isRegister ? 'Switch to Login' : 'Switch to Register'}
+                </button>
+            </div>
         </div>
     );
 };
