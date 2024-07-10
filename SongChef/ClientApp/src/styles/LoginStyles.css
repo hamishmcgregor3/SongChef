@@ -1,10 +1,10 @@
 ﻿.login-container {
     max-width: 400px;
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 10%;
     padding: 20px;
-    border: 2px solid black;
-    border-radius: 6px;
+    border: 3px solid black;
+    border-radius: 12px;
     background-color: white;
     font-family: "forma-djr-micro", sans-serif;
     font-weight: 700;
@@ -47,8 +47,8 @@ input[type="password"] {
 }
 
 .submit-button:hover {
-    background-color: black;
-    color: white;
+    background-color: lime;
+    color: black;
 }
 
 .message {
@@ -58,18 +58,18 @@ input[type="password"] {
 }
 
 .button-container {
+    margin-top: 20px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .toggle-button {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-size: 14px;
     border-radius: 4px;
 }
 
 .toggle-button:hover {
-    background-color: white;
-    color: black;
+    background-color: orange;
 }
