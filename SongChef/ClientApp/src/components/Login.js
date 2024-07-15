@@ -1,7 +1,8 @@
 ﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/LoginStyles.css'; 
+import '../styles/LoginStyles.css';
+import logo from '../assets/ramen-bowl.png'; // adjust the path according to your project structure
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -34,36 +35,49 @@ const Login = () => {
     };
 
     return (
-        <div className="login-container">
-            <h2>{isRegister ? 'Register' : 'Login'}</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label>Username:</label>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
+        <div className="login-page-container"> 
+            <div className="title-container">
+                <div className="welcome-msg">WELCOME TO</div>
+                <img src={logo} alt="Logo Image" className="responsive-image" />
+                <div className="title-msg">
+                    <span className="login-song-title">Song</span>
+                    <span className="login-chef-title">Chef</span>
                 </div>
-                <div className="form-group">
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
+                <div className="slogan-msg">Tune In to Your Friends' Music <strong>Tastes</strong>, and Share Your Own!</div>
+            </div>
+            <div className="login-container">
+                <div className="login-form-container">
+                    <h2>{isRegister ? 'Register' : 'Login'}</h2>
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-group">
+                            <label>{isRegister ? 'Create New Username:' : 'Username:'}</label>
+                            <input
+                                type="text"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>{isRegister ? 'Create New Password:' : 'Password:'}</label>
+                            <input
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="button-container">
+                        <button type="submit" className="submit-button">
+                            {isRegister ? 'Register' : 'Login'}
+                        </button>
+                        <button className="toggle-button" onClick={() => setIsRegister(!isRegister)}>
+                            {isRegister ? 'Switch to Login' : 'Switch to Register'}
+                            </button>
+                        </div>
+                    </form>
+                    <p className="message">{message}</p>
                 </div>
-                <button type="submit" className="submit-button">
-                    {isRegister ? 'Register' : 'Login'}
-                </button>
-            </form>
-            <p className="message">{message}</p>
-            <div className="button-container">
-                <button className="toggle-button" onClick={() => setIsRegister(!isRegister)}>
-                    {isRegister ? 'Switch to Login' : 'Switch to Register'}
-                </button>
             </div>
         </div>
     );
