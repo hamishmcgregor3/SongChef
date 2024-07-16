@@ -20,7 +20,6 @@ const NavBar = () => {
     return (
         <div className="nav-bar">
             <AddSongRecModal />
-            {/*<a href="/" className="logout">Logout</a>*/}
             <button type="submit" className="logout-button" onClick={handleSubmit}>
                 Logout
             </button>

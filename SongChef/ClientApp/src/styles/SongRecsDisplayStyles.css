@@ -1,5 +1,6 @@
 ﻿.songrecs-display {
-    overflow-y: auto;
+    flex-grow: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .switch {
