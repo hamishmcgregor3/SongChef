@@ -14,8 +14,8 @@ Create your profile, log in, and start sharing the musical flavors that spice up
 
 - Create Profiles & Log In: Join the community and start sharing your musical taste.
 - Share Song Recommendations: Add new song entries with details like title, artist, genre, and your ideal listening experience.
-- Homepage Display: Feast your eyes on all song entries shared by the community.
-- Genre-Based Styling: Enjoy visually stunning entries with background and text colors that match the song's genre.
+- Homepage Display: Check out all song entries shared by the SongChef community.
+- Genre-Based Styling: Enjoy visually engaging song recommendations with background and text colors that match the song's genre.
 - Friends' Taste: See what your friends are listening to and explore their musical taste.
 
 ## Getting Started
@@ -52,8 +52,6 @@ git clone https://github.com/hamishmcgregor3/SongChef.git
 ## Usage
 
 - Register a new account or log in with an existing account.
-- Share your song recommendations by filling out the form.
+- Add your song recommendations by hitting the "Add Song Rec" button in the Nav Bar.
 - Browse song recommendations on the homepage.
-- Use the "My Songs" button to see your personal song recommendations.
-
-## Future Enhancements
+- Use the "My Songs" checkbox to see your personal song recommendations.
