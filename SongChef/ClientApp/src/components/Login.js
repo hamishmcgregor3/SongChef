@@ -2,7 +2,7 @@
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/LoginStyles.css';
-import logo from '../assets/ramen-bowl.png'; // adjust the path according to your project structure
+import logo from '../assets/ramen-bowl.png';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -25,7 +25,6 @@ const Login = () => {
                 sessionStorage.setItem('username', username);
                 navigate('/Home');
             } else {
-                // Handle registration failure
                 console.error('Registration failed');
             }
 

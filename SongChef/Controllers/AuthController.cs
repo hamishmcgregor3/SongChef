@@ -24,7 +24,6 @@ namespace SongChef.Controllers
                 return BadRequest("Username already exists.");
             }
 
-            // Hash the password before storing it (consider using a library like BCrypt.Net)
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
 
             _context.Users.Add(user);

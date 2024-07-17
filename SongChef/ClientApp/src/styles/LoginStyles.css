@@ -13,9 +13,9 @@
 
 .responsive-image {
     max-width: 250px;
-    height: auto; /* This keeps the aspect ratio */
+    height: auto; 
     display: block;
-    margin: 0 auto; /* Optional: center the image */
+    margin: 0 auto; 
 }
 
 .welcome-msg {

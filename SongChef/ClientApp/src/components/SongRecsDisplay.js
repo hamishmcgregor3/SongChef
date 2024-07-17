@@ -37,7 +37,7 @@ const SongRecsDisplay = () => {
 
     useEffect(() => {
         if (isUserSpecific) {
-            const username = sessionStorage.getItem('username'); // Replace with actual username logic
+            const username = sessionStorage.getItem('username');
             fetchSongsForUser(username);
         } else {
             fetchSongs();

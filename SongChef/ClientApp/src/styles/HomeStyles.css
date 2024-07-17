@@ -7,8 +7,8 @@
 
 .app-body {
     display: flex;
-    flex-grow: 1; /* Make sure this takes the remaining space */
-    overflow: hidden; /* Prevent scrolling in the parent container */
+    flex-grow: 1; 
+    overflow: hidden; 
     padding-top: 65px;
     width: 100%;
 }

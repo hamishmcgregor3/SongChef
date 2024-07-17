@@ -3,6 +3,7 @@
     border-right: 2px solid #000;
     display: flex;
     flex-direction: column;
+    justify-content: space-between; 
     background-color: #F9B9C3;
     text-align: center;
     font-family: "forma-djr-micro", sans-serif;
@@ -10,29 +11,17 @@
     font-style: normal;
 }
 
-.logout-button, .home-button, .profile-button {
-    font-size: 20px;
-    color: black;
+.logout-button {
     border: none;
+    color: black;
     background-color: #F9B9C3;
+    font-size: 20px;
     font-family: "forma-djr-micro", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
 
-.profile-button {
-    margin-top: 300px;
-    margin-bottom: 30px;
-    text-decoration: none;
-}
-
-.home-button {
-    text-decoration: none;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.logout-button:hover, .home-button:hover, .profile-button:hover {
+.logout-button:hover {
     text-decoration-line: underline;
     color: lime; 
 }
